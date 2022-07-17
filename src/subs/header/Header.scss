@@ -1,0 +1,11 @@
+@import '../../styles/mixins';
+@import '../../styles/varaibles';
+
+.header {
+    margin-top: 3rem;
+    width: 90%;
+    background-color: $white;
+    @include flex(row, space-between, center);
+    padding: 1rem;
+    border-radius: 1rem;
+}

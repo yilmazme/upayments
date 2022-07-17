@@ -1,0 +1,103 @@
+@import '../../styles/mixins';
+@import '../../styles/varaibles';
+
+.create-container{
+    @include fullContainer;
+    background-color: $gray;
+    @include flex(column, flex-start, center);
+    .form-container {
+        margin-top: 5rem;
+        width: 70vw;
+        text-align: center;
+        position: relative;
+        h2{
+            margin-bottom: 1rem;
+        }
+
+        form{
+            width: 30rem;
+            margin: auto;
+
+            .form-group{
+                width: 100%;
+
+                input{
+                    width: 100%;
+                    height: 3rem;
+                    border: none;
+                    border-radius: 12px;
+                    margin: 0.5rem 0;
+                    padding-left: 1rem;
+                    box-shadow: 1px 1px 1px $black;
+                }
+
+                textarea{
+                    width: 100%;
+                    height: 6rem;
+                    border: none;
+                    border-radius: 12px;
+                    margin: 0.5rem 0;
+                    padding-left: 1rem;
+                    padding-top: 1rem;
+                    resize: none;
+                    box-shadow: 1px 1px 1px $black;
+                }
+                select{
+                    width: 100%;
+                    height: 3rem;
+                    border: none;
+                    border-radius: 12px;
+                    margin: 0.5rem 0;
+                    padding-left: 1rem;
+                    box-shadow: 1px 1px 1px $black;
+                    padding-right: 1rem !important;
+                    position: relative;
+                    cursor: pointer;
+                }
+                select {
+                    -webkit-appearance: none;
+                    appearance: none;
+                  }
+                  .select-wrapper{
+                    position: relative;
+                    &:after {
+                        content: "▼";
+                        font-size: 1rem;
+                        top: 1.25rem;
+                        right: 10px;
+                        position: absolute;
+                      }
+                  }
+                  
+            }
+
+            button{
+                width: 100%;
+                    height: 3rem;
+                    border: none;
+                    border-radius: 12px;
+                    margin: 0.5rem 0;
+                    font-size: 1.25rem;
+                    letter-spacing: 1px;
+                    cursor: pointer;
+                    box-shadow: 1px 1px 1px $black;
+
+                    &:hover{
+                        height: 2.75rem;
+                        width: 98%;
+                        transition-duration: 300ms;
+                    }
+            }
+        }
+
+
+
+        .back-button {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            cursor: pointer;
+            @include flex(row, center, center);
+        }
+    }
+}

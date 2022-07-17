@@ -1,19 +1,12 @@
-@import './mixins.scss';
-@import './varaibles.scss';
+@import '../../styles/mixins';
+@import '../../styles/varaibles';
+
 
 .container {
     @include fullContainer;
     background-color: $gray;
     @include flex(column, flex-start, center);
 
-    .header {
-        margin-top: 3rem;
-        width: 90%;
-        background-color: $white;
-        @include flex(row, space-between, center);
-        padding: 1rem;
-        border-radius: 1rem;
-    }
 
     .filter {
         margin-top: 3rem;
@@ -31,6 +24,7 @@
             padding: 0.5rem 2rem;
             border-radius: 1rem;
             cursor: pointer;
+            font-size: 1.1rem;
         }
 
         option {
@@ -39,6 +33,21 @@
             cursor: pointer;
             height: 2rem;
         }
+
+        select {
+            -webkit-appearance: none;
+            appearance: none;
+          }
+        .select-wrapper{
+            position: relative;
+            &:after {
+                content: "▼";
+                font-size: 1rem;
+                top: 0.5rem;
+                right: 10px;
+                position: absolute;
+              }
+          }
     }
 
     .cart-container {
