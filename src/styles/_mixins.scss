@@ -1,0 +1,29 @@
+@mixin centerElement{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin flex($direction, $justify, $align){
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin fullContainer{
+width: 100vw;
+min-height: 100vh;
+}
+@mixin fullContent{
+width: 100vw;
+min-height: calc(100vh - 7rem);
+}
+@keyframes reveal_anim {
+    from {opacity: 0.1;}
+    to {opacity: 1;}
+}
+@mixin reveal($time) {
+    animation: reveal_anim $time linear ;
+}

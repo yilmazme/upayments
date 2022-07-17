@@ -1,0 +1,59 @@
+@import './mixins.scss';
+@import './varaibles.scss';
+
+.container {
+    @include fullContainer;
+    background-color: $gray;
+    @include flex(column, flex-start, center);
+
+    .header {
+        margin-top: 3rem;
+        width: 90%;
+        background-color: $white;
+        @include flex(row, space-between, center);
+        padding: 1rem;
+        border-radius: 1rem;
+    }
+
+    .filter {
+        margin-top: 3rem;
+        width: 90%;
+        @include flex(row, space-between, center);
+
+        p {
+            background-color: $white;
+            padding: 0.5rem 1rem;
+            border-radius: 1rem;
+        }
+
+        select {
+            background-color: $white;
+            padding: 0.5rem 2rem;
+            border-radius: 1rem;
+            cursor: pointer;
+        }
+
+        option {
+            background-color: $white;
+            padding: 0.5rem 2rem;
+            cursor: pointer;
+            height: 2rem;
+        }
+    }
+
+    .cart-container {
+        margin-top: 6rem;
+        width: 90%;
+        display: grid;
+        grid-template-columns: repeat(4, auto);
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .add-button{
+        position: fixed;
+        bottom: 2rem;
+        right: 3rem;
+        cursor: pointer;
+    }
+}
