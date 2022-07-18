@@ -7,7 +7,6 @@ import { transitions, positions, Provider as AlertProvider } from "react-alert";
 import AlertTemplate from "react-alert-template-basic";
 
 const options = {
-  // you can also just use 'bottom center'
   position: positions.TOP_CENTER,
   timeout: 5000,
   offset: "30px",
@@ -30,9 +29,6 @@ function App() {
           <Route path="/create">
             <CreateProduct />
           </Route>
-          {/* <Route path="*">
-          <NotFound />
-        </Route> */}
         </Switch>
       </Router>
     </AlertProvider>
