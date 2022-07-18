@@ -10,13 +10,13 @@
     @include reveal(1s);
     position: relative;
 
-    .delete-button{
+    .delete-button {
         position: absolute;
         top: -1rem;
         right: -1rem;
         cursor: pointer;
     }
-    
+
     .img-div {
         border-radius: 12px;
         padding-top: 1rem;
@@ -39,31 +39,107 @@
     }
 }
 
-.delete-dialog{
+.delete-dialog {
     background-color: $gray;
     padding: 2rem 3rem;
     width: fit-content;
 
-    .button-group{
+    .button-group {
         margin-top: 2rem;
         @include flex(row, space-between, center);
-        width:100%;
-        button{
+        width: 100%;
+
+        button {
             border: none;
             padding: 0.5rem 1rem;
             border-radius: 4px;
             color: $white;
             cursor: pointer;
-            &:hover{
+
+            &:hover {
                 padding: 0.4rem 0.8rem;
                 transition-duration: 200ms;
             }
-    
-            &:nth-child(1){
+
+            &:nth-child(1) {
                 background-color: $black;
             }
-            &:nth-child(2){
+
+            &:nth-child(2) {
                 background-color: red;
+            }
+        }
+    }
+}
+
+@media (max-width: 670px) {
+
+    .product-card {
+        width: 100%;
+        height: 25rem;
+        margin: auto;
+        @include flex(column, flex-start, center);
+        @include reveal(1s);
+        position: relative;
+
+        .delete-button {
+            position: absolute;
+            top: -1rem;
+            right: -1rem;
+            cursor: pointer;
+        }
+
+        .img-div {
+            border-radius: 12px;
+            padding-top: 1rem;
+            width: 100%;
+            height: 20rem;
+            background-color: $white;
+            text-align: center;
+            box-shadow: 1px 1px 1px $black;
+
+            img {
+                width: 80%;
+                height: 80%;
+                background-color: $white;
+            }
+        }
+
+        .info {
+            text-align: center;
+            margin-top: 1rem;
+        }
+    }
+
+    .delete-dialog {
+        background-color: $gray;
+        padding: 2rem 3rem;
+        width: fit-content;
+
+        .button-group {
+            margin-top: 2rem;
+            @include flex(row, space-between, center);
+            width: 100%;
+
+            button {
+                border: none;
+                padding: 0.5rem 1rem;
+                border-radius: 4px;
+                color: $white;
+                cursor: pointer;
+
+                &:hover {
+                    padding: 0.4rem 0.8rem;
+                    transition-duration: 200ms;
+                }
+
+                &:nth-child(1) {
+                    background-color: $black;
+                }
+
+                &:nth-child(2) {
+                    background-color: red;
+                }
             }
         }
     }

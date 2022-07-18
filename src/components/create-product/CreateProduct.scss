@@ -1,27 +1,29 @@
 @import '../../styles/mixins';
 @import '../../styles/varaibles';
 
-.create-container{
+.create-container {
     @include fullContainer;
     background-color: $gray;
     @include flex(column, flex-start, center);
+
     .form-container {
         margin-top: 5rem;
         width: 70vw;
         text-align: center;
         position: relative;
-        h2{
+
+        h2 {
             margin-bottom: 1rem;
         }
 
-        form{
+        form {
             width: 30rem;
             margin: auto;
 
-            .form-group{
+            .form-group {
                 width: 100%;
 
-                input{
+                input {
                     width: 100%;
                     height: 3rem;
                     border: none;
@@ -31,7 +33,7 @@
                     box-shadow: 1px 1px 1px $black;
                 }
 
-                textarea{
+                textarea {
                     width: 100%;
                     height: 6rem;
                     border: none;
@@ -42,7 +44,8 @@
                     resize: none;
                     box-shadow: 1px 1px 1px $black;
                 }
-                select{
+
+                select {
                     width: 100%;
                     height: 3rem;
                     border: none;
@@ -54,39 +57,42 @@
                     position: relative;
                     cursor: pointer;
                 }
+
                 select {
                     -webkit-appearance: none;
                     appearance: none;
-                  }
-                  .select-wrapper{
+                }
+
+                .select-wrapper {
                     position: relative;
+
                     &:after {
                         content: "▼";
                         font-size: 1rem;
                         top: 1.25rem;
                         right: 10px;
                         position: absolute;
-                      }
-                  }
-                  
+                    }
+                }
+
             }
 
-            button{
+            button {
                 width: 100%;
-                    height: 3rem;
-                    border: none;
-                    border-radius: 12px;
-                    margin: 0.5rem 0;
-                    font-size: 1.25rem;
-                    letter-spacing: 1px;
-                    cursor: pointer;
-                    box-shadow: 1px 1px 1px $black;
+                height: 3rem;
+                border: none;
+                border-radius: 12px;
+                margin: 0.5rem 0;
+                font-size: 1.25rem;
+                letter-spacing: 1px;
+                cursor: pointer;
+                box-shadow: 1px 1px 1px $black;
 
-                    &:hover{
-                        height: 2.75rem;
-                        width: 98%;
-                        transition-duration: 300ms;
-                    }
+                &:hover {
+                    height: 2.75rem;
+                    width: 98%;
+                    transition-duration: 300ms;
+                }
             }
         }
 
@@ -100,4 +106,40 @@
             @include flex(row, center, center);
         }
     }
+}
+
+@media (max-width: 670px) {
+    .create-container {
+        @include fullContainer;
+        background-color: $gray;
+        @include flex(column, flex-start, center);
+
+        .form-container {
+            margin-top: 5rem;
+            width: 100vw;
+            text-align: center;
+            position: relative;
+
+            h2 {
+                margin-bottom: 1rem;
+            }
+
+            form {
+                width: 90%;
+                margin: auto;
+
+            }
+
+
+
+            .back-button {
+                position: absolute;
+                top: -3rem;
+                right: 1rem;
+                cursor: pointer;
+                @include flex(row, center, center);
+            }
+        }
+    }
+
 }

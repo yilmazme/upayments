@@ -50,10 +50,18 @@ function CreateProduct() {
   const handleChange = (event) => {
     setProduct((values) => ({ ...values, [event.target.name]: event.target.value }));
   };
+
+  function isNumber(n) {
+    return !isNaN(parseFloat(n)) && !isNaN(n - 0);
+  }
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log({ product });
 
+    if (!isNumber(product.price)) {
+      alert.error("Price should be a number");
+      return;
+    }
     postData("https://62286b649fd6174ca82321f1.mockapi.io/case-study/products", product).then((data) => {
       console.log({ data });
       alert.success(`${data.name} created`);

@@ -70,3 +70,67 @@
     }
 
 }
+
+
+@media (max-width: 670px) {
+    .product-container {
+        @include fullContainer;
+        background-color: $gray;
+        @include flex(column, flex-start, center);
+
+        .product {
+            width: 100%;
+            margin-top: 2rem;
+            // background-color: $gray;
+            @include flex(column, flex-start, center);
+
+            .upper {
+                position: relative;
+                @include flex(column, flex-start, center);
+                width: 100%;
+                height: 20rem;
+                border-bottom: 2px solid $black;
+
+                .img-div {
+                    background-color: $white;
+                    height: 90%;
+                    border-radius: 12px;
+                    width: 16rem;
+                    text-align: center;
+                    padding-top: 1rem;
+
+                    img {
+                        border-radius: 12px;
+                        height: 90%;
+                        width: 80%;
+                    }
+                }
+
+                .upper-info {
+                    height: 90%;
+                    @include flex(column, space-between, flex-start);
+                    margin-left: 2rem;
+
+                    p {
+                        font-size: 2rem;
+                    }
+                }
+
+                .back-button {
+                    position: absolute;
+                    top: -2rem;
+                    right: -1rem;
+                    cursor: pointer;
+                    @include flex(row, center, center);
+                }
+            }
+
+            .description {
+
+                width: 80%;
+
+            }
+        }
+
+    }
+}
