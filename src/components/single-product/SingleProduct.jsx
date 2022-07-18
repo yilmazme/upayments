@@ -16,7 +16,6 @@ function SingleProduct() {
       .then((res) => res.json())
       .then((data) => {
         setProduct(data);
-        console.log(data);
       });
 
     return () => {};

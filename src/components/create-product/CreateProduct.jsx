@@ -63,7 +63,6 @@ function CreateProduct() {
       return;
     }
     postData("https://62286b649fd6174ca82321f1.mockapi.io/case-study/products", product).then((data) => {
-      console.log({ data });
       alert.success(`${data.name} created`);
       setProduct({ name: "", description: "", category: "", price: "", avatar: "", developerEmail: "10myilmaz@gmail.com" });
     });

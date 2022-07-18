@@ -16,7 +16,6 @@ function Products() {
     fetch("https://62286b649fd6174ca82321f1.mockapi.io/case-study/products/")
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setFilteredProducts(data);
         setProducts(data);
         getCategories();
