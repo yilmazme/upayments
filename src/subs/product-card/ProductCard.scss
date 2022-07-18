@@ -38,3 +38,33 @@
         margin-top: 1rem;
     }
 }
+
+.delete-dialog{
+    background-color: $gray;
+    padding: 2rem 3rem;
+    width: fit-content;
+
+    .button-group{
+        margin-top: 2rem;
+        @include flex(row, space-between, center);
+        width:100%;
+        button{
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            color: $white;
+            cursor: pointer;
+            &:hover{
+                padding: 0.4rem 0.8rem;
+                transition-duration: 200ms;
+            }
+    
+            &:nth-child(1){
+                background-color: $black;
+            }
+            &:nth-child(2){
+                background-color: red;
+            }
+        }
+    }
+}

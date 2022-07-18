@@ -25,12 +25,11 @@ function Products() {
     return () => {};
   }, []);
 
-  const getCategories = () => {
-    fetch("https://62286b649fd6174ca82321f1.mockapi.io/case-study/categories/")
-      .then((res) => res.json())
-      .then((data) => {
-        setCategories(data);
-      });
+  const getCategories = async () => {
+    const res = await fetch("https://62286b649fd6174ca82321f1.mockapi.io/case-study/categories/");
+    const data = await res.json();
+
+    setCategories(data);
 
     return () => {};
   };
@@ -48,6 +47,11 @@ function Products() {
 
   const goCreate = () => {
     history.push("/create");
+  };
+
+  const removeDeletedProduct = (id) => {
+    let productWithDeletedOne = products.filter((prod) => prod.id !== id);
+    setFilteredProducts(productWithDeletedOne);
   };
   return (
     <div className="container">
@@ -71,7 +75,7 @@ function Products() {
       <div className="cart-container">
         {filteredProducts &&
           filteredProducts.map((product) => {
-            return <ProductCard product={product} key={product.id} />;
+            return <ProductCard product={product} key={product.id} sendId={removeDeletedProduct} />;
           })}
       </div>
       <div className="add-button">
